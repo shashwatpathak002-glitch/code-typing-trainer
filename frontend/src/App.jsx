@@ -20,7 +20,7 @@ function computeStats(original, typed, elapsedSeconds) {
   };
 }
 
-const LANGUAGES = ["python", "javascript", "java", "cpp", "c"];
+const LANGUAGES = ["python", "javascript", "java", "cpp", "c", "ruby", "go", "rust", "php"];
 const DIFFICULTIES = ["easy", "medium", "hard"];
 
 const DIFFICULTY_COLORS = {
