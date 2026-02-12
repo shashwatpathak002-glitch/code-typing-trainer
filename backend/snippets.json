@@ -1,0 +1,7 @@
+{
+  "python": {
+    "hard": [
+      "def average_score(scores):\n    if not scores:\n        return 0.0\n    total = sum(scores)\n    count = len(scores)\n    return total / count\n\n\ndef classify_student(name, scores):\n    avg = average_score(scores)\n    if avg >= 90:\n        grade = \"A\"\n    elif avg >= 75:\n        grade = \"B\"\n    elif avg >= 60:\n        grade = \"C\"\n    else:\n        grade = \"D\"\n\n    return {\n        \"name\": name,\n        \"average\": round(avg, 2),\n        \"grade\": grade\n    }\n\n\nstudents = [\n    (\"Aarav\",  [95, 88, 92]),\n    (\"Riya\",   [76, 81, 79]),\n    (\"Kunal\",  [59, 63, 57]),\n    (\"Meera\",  [89, 91, 94])\n]\n\n\nreport = []\nfor name, scores in students:\n    info = classify_student(name, scores)\n    report.append(info)\n\n\nfor entry in report:\n    print(entry[\"name\"], \"->\" , entry[\"average\"], entry[\"grade\"])"
+    ]
+  }
+}
