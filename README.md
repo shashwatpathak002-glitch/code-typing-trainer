@@ -5,15 +5,15 @@ A full-stack application designed to help developers improve their programming t
 ## ✨ Features
 
 ### Core Features
-- **Interactive Code Snippets**: Practice typing actual code from 5 programming languages
+- **Interactive Code Snippets**: Practice typing actual code from 9 programming languages
 - **Real-time Metrics**: Track your WPM (Words Per Minute), accuracy percentage, and character count
 - **Multiple Difficulty Levels**: Easy, Medium, and Hard snippets for progressive learning
-- **Support for Multiple Languages**: Python, JavaScript, Java, C++, and C
+- **Support for Multiple Languages**: Python, JavaScript, Java, C++, C, Ruby, Go, Rust, and PHP
 - **Dark Mode UI**: Comfortable interface designed for extended practice sessions
 - **Fast Feedback**: Immediate performance metrics after each practice session
 
 ### New Features Added
-- **Language Selector**: Choose from 5 programming languages to practice
+- **Language Selector**: Choose from 9 programming languages to practice
 - **Difficulty Selector**: Select easy, medium, or hard code snippets
 - **Real-time Timer**: Live countdown display during practice sessions
 - **Reset Button**: Quickly reload a new snippet of the same language/difficulty
