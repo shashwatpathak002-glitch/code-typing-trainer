@@ -1,7 +1,73 @@
 {
   "python": {
+    "easy": [
+      "x = 5\ny = 10\nprint(x + y)",
+      "name = \"Alice\"\nage = 25\nprint(f\"I am {age} years old\")",
+      "numbers = [1, 2, 3, 4, 5]\nfor num in numbers:\n    print(num)"
+    ],
+    "medium": [
+      "def fibonacci(n):\n    if n <= 1:\n        return n\n    return fibonacci(n-1) + fibonacci(n-2)\n\nprint(fibonacci(6))",
+      "def is_palindrome(s):\n    s = s.lower().replace(' ', '')\n    return s == s[::-1]\n\nprint(is_palindrome('racecar'))",
+      "def factorial(n):\n    if n == 0:\n        return 1\n    return n * factorial(n-1)\n\nprint(factorial(5))"
+    ],
     "hard": [
-      "def average_score(scores):\n    if not scores:\n        return 0.0\n    total = sum(scores)\n    count = len(scores)\n    return total / count\n\n\ndef classify_student(name, scores):\n    avg = average_score(scores)\n    if avg >= 90:\n        grade = \"A\"\n    elif avg >= 75:\n        grade = \"B\"\n    elif avg >= 60:\n        grade = \"C\"\n    else:\n        grade = \"D\"\n\n    return {\n        \"name\": name,\n        \"average\": round(avg, 2),\n        \"grade\": grade\n    }\n\n\nstudents = [\n    (\"Aarav\",  [95, 88, 92]),\n    (\"Riya\",   [76, 81, 79]),\n    (\"Kunal\",  [59, 63, 57]),\n    (\"Meera\",  [89, 91, 94])\n]\n\n\nreport = []\nfor name, scores in students:\n    info = classify_student(name, scores)\n    report.append(info)\n\n\nfor entry in report:\n    print(entry[\"name\"], \"->\" , entry[\"average\"], entry[\"grade\"])"
+      "class Student:\n    def __init__(self, name, scores):\n        self.name = name\n        self.scores = scores\n    def average(self):\n        return sum(self.scores) / len(self.scores)\n    def grade(self):\n        avg = self.average()\n        return 'A' if avg >= 90 else 'B' if avg >= 75 else 'C'\n\ns = Student(\"Bob\", [85, 90, 92])\nprint(f\"{s.name}: {s.grade()}\")",
+      "def merge_sort(arr):\n    if len(arr) <= 1:\n        return arr\n    mid = len(arr) // 2\n    left = merge_sort(arr[:mid])\n    right = merge_sort(arr[mid:])\n    return merge(left, right)\n\ndef merge(left, right):\n    result = []\n    while left and right:\n        if left[0] <= right[0]:\n            result.append(left.pop(0))\n        else:\n            result.append(right.pop(0))\n    return result + left + right"
+    ]
+  },
+  "javascript": {
+    "easy": [
+      "const x = 5;\nconst y = 10;\nconsole.log(x + y);",
+      "const name = 'Alice';\nconst age = 25;\nconsole.log(`I am ${age} years old`);",
+      "const numbers = [1, 2, 3, 4, 5];\nnumbers.forEach(num => console.log(num));"
+    ],
+    "medium": [
+      "function fibonacci(n) {\n  if (n <= 1) return n;\n  return fibonacci(n - 1) + fibonacci(n - 2);\n}\nconsole.log(fibonacci(6));",
+      "function isPalindrome(str) {\n  const clean = str.toLowerCase().replace(/\\s/g, '');\n  return clean === clean.split('').reverse().join('');\n}\nconsole.log(isPalindrome('racecar'));",
+      "const square = (n) => n * n;\nconst numbers = [1, 2, 3, 4, 5];\nconst squared = numbers.map(square);\nconsole.log(squared);"
+    ],
+    "hard": [
+      "class Student {\n  constructor(name, scores) {\n    this.name = name;\n    this.scores = scores;\n  }\n  average() {\n    return this.scores.reduce((a, b) => a + b) / this.scores.length;\n  }\n  grade() {\n    const avg = this.average();\n    return avg >= 90 ? 'A' : avg >= 75 ? 'B' : 'C';\n  }\n}\nconst student = new Student('Bob', [85, 90, 92]);\nconsole.log(`${student.name}: ${student.grade()}`);",
+      "function debounce(func, wait) {\n  let timeout;\n  return function executedFunction(...args) {\n    const later = () => {\n      clearTimeout(timeout);\n      func(...args);\n    };\n    clearTimeout(timeout);\n    timeout = setTimeout(later, wait);\n  };\n}\nconst search = debounce(() => console.log('Searching...'), 300);"
+    ]
+  },
+  "java": {
+    "easy": [
+      "public class Hello {\n  public static void main(String[] args) {\n    int x = 5;\n    int y = 10;\n    System.out.println(x + y);\n  }\n}",
+      "public class StringEx {\n  public static void main(String[] args) {\n    String name = \"Alice\";\n    int age = 25;\n    System.out.println(\"I am \" + age + \" years old\");\n  }\n}"
+    ],
+    "medium": [
+      "public class Fibonacci {\n  static int fibonacci(int n) {\n    if (n <= 1) return n;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n  }\n  public static void main(String[] args) {\n    System.out.println(fibonacci(6));\n  }\n}",
+      "import java.util.Arrays;\npublic class Sorting {\n  public static void main(String[] args) {\n    int[] arr = {5, 2, 8, 1, 9};\n    Arrays.sort(arr);\n    System.out.println(Arrays.toString(arr));\n  }\n}"
+    ],
+    "hard": [
+      "public class Student {\n  private String name;\n  private int[] scores;\n  public Student(String name, int[] scores) {\n    this.name = name;\n    this.scores = scores;\n  }\n  public double average() {\n    int sum = 0;\n    for (int score : scores) sum += score;\n    return sum / (double) scores.length;\n  }\n  public char grade() {\n    double avg = average();\n    if (avg >= 90) return 'A';\n    if (avg >= 75) return 'B';\n    return 'C';\n  }\n}"
+    ]
+  },
+  "cpp": {
+    "easy": [
+      "#include <iostream>\nusing namespace std;\nint main() {\n  int x = 5, y = 10;\n  cout << x + y << endl;\n  return 0;\n}",
+      "#include <iostream>\nusing namespace std;\nint main() {\n  for (int i = 1; i <= 5; i++) {\n    cout << i << \" \";\n  }\n  return 0;\n}"
+    ],
+    "medium": [
+      "#include <iostream>\nusing namespace std;\nint fibonacci(int n) {\n  if (n <= 1) return n;\n  return fibonacci(n-1) + fibonacci(n-2);\n}\nint main() {\n  cout << fibonacci(6) << endl;\n  return 0;\n}",
+      "#include <iostream>\n#include <algorithm>\nusing namespace std;\nint main() {\n  int arr[] = {5, 2, 8, 1, 9};\n  sort(arr, arr + 5);\n  for (int x : arr) cout << x << \" \";\n  return 0;\n}"
+    ],
+    "hard": [
+      "#include <iostream>\n#include <vector>\nusing namespace std;\nclass Student {\npublic:\n  string name;\n  vector<int> scores;\n  Student(string n, vector<int> s) : name(n), scores(s) {}\n  double average() {\n    int sum = 0;\n    for (int s : scores) sum += s;\n    return sum / (double)scores.size();\n  }\n};"
+    ]
+  },
+  "c": {
+    "easy": [
+      "#include <stdio.h>\nint main() {\n  int x = 5, y = 10;\n  printf(\"%d\\n\", x + y);\n  return 0;\n}",
+      "#include <stdio.h>\nint main() {\n  for (int i = 1; i <= 5; i++) {\n    printf(\"%d \", i);\n  }\n  return 0;\n}"
+    ],
+    "medium": [
+      "#include <stdio.h>\nint factorial(int n) {\n  if (n == 0) return 1;\n  return n * factorial(n - 1);\n}\nint main() {\n  printf(\"%d\\n\", factorial(5));\n  return 0;\n}",
+      "#include <stdio.h>\n#include <string.h>\nint main() {\n  char str[] = \"hello\";\n  printf(\"Length: %lu\\n\", strlen(str));\n  return 0;\n}"
+    ],
+    "hard": [
+      "#include <stdio.h>\n#include <stdlib.h>\nvoid mergeSort(int arr[], int left, int right);\nvoid merge(int arr[], int left, int mid, int right);\nint main() {\n  int arr[] = {64, 34, 25, 12, 22, 11, 90};\n  int n = sizeof(arr)/sizeof(arr[0]);\n  mergeSort(arr, 0, n-1);\n  for(int i=0; i<n; i++) printf(\"%d \", arr[i]);\n  return 0;\n}"
     ]
   }
 }
