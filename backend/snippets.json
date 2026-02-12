@@ -68,6 +68,74 @@
     ],
     "hard": [
       "#include <stdio.h>\n#include <stdlib.h>\nvoid mergeSort(int arr[], int left, int right);\nvoid merge(int arr[], int left, int mid, int right);\nint main() {\n  int arr[] = {64, 34, 25, 12, 22, 11, 90};\n  int n = sizeof(arr)/sizeof(arr[0]);\n  mergeSort(arr, 0, n-1);\n  for(int i=0; i<n; i++) printf(\"%d \", arr[i]);\n  return 0;\n}"
+    ],
+  "ruby": {
+    "easy": [
+      "puts \"Hello, World!\"",
+      "name = \"Alice\"\nage = 30\nputs \"#{name} is #{age} years old\"",
+      "numbers = [1, 2, 3, 4, 5]\nnumbers.each { |n| puts n }"
+    ],
+    "medium": [
+      "def fibonacci(n)\n  if n <= 1\n    n\n  else\n    fibonacci(n-1) + fibonacci(n-2)\n  end\nend",
+      "arr = [1, 2, 3, 4, 5]\nsquares = arr.map { |x| x ** 2 }\nputs squares.inspect",
+      "def greet(name)\n  \"Hello, #{name}!\"\nend\nputs greet(\"Ruby\")"
+    ],
+    "hard": [
+      "class Calculator\n  def add(a, b)\n    a + b\n  end\n  def multiply(a, b)\n    a * b\n  end\nend",
+      "hash = { a: 1, b: 2, c: 3 }\nresult = hash.select { |k, v| v > 1 }\nputs result",
+      "[1, 2, 3, 4, 5].select { |n| n.even? }.map { |n| n ** 2 }.reduce(:+)"
     ]
+  },
+  "go": {
+    "easy": [
+      "package main\nimport \"fmt\"\nfunc main() {\n  fmt.Println(\"Hello, World!\")\n}",
+      "package main\nimport \"fmt\"\nfunc main() {\n  name := \"Alice\"\n  age := 30\n  fmt.Printf(\"%s is %d\\n\", name, age)\n}",
+      "package main\nimport \"fmt\"\nfunc main() {\n  nums := []int{1, 2, 3, 4, 5}\n  for _, n := range nums {\n    fmt.Println(n)\n  }\n}"
+    ],
+    "medium": [
+      "func fibonacci(n int) int {\n  if n <= 1 {\n    return n\n  }\n  return fibonacci(n-1) + fibonacci(n-2)\n}",
+      "package main\nimport (\n  \"fmt\"\n)\nfunc main() {\n  nums := []int{1, 2, 3, 4, 5}\n  sum := 0\n  for _, n := range nums {\n    sum += n\n  }\n  fmt.Println(sum)\n}",
+      "func greet(name string) string {\n  return \"Hello, \" + name\n}"
+    ],
+    "hard": [
+      "type Person struct {\n  Name string\n  Age int\n}\nfunc (p Person) Greet() string {\n  return \"Hello, \" + p.Name\n}",
+      "func filterEven(nums []int) []int {\n  var result []int\n  for _, n := range nums {\n    if n%2 == 0 {\n      result = append(result, n)\n    }\n  }\n  return result\n}",
+      "package main\nimport \"sort\"\nfunc main() {\n  nums := []int{5, 2, 8, 1, 9}\n  sort.Ints(nums)\n}"
+    ]
+  },
+  "rust": {
+    "easy": [
+      "fn main() {\n  println!(\"Hello, World!\");\n}",
+      "fn main() {\n  let name = \"Alice\";\n  let age = 30;\n  println!(\"{} is {} years old\", name, age);\n}",
+      "fn main() {\n  let numbers = vec![1, 2, 3, 4, 5];\n  for n in numbers {\n    println!(\"{}\", n);\n  }\n}"
+    ],
+    "medium": [
+      "fn fibonacci(n: u32) -> u32 {\n  if n <= 1 {\n    n\n  } else {\n    fibonacci(n - 1) + fibonacci(n - 2)\n  }\n}",
+      "fn main() {\n  let numbers = vec![1, 2, 3, 4, 5];\n  let squares: Vec<_> = numbers.iter().map(|x| x * x).collect();\n  println!(\"{:?}\", squares);\n}",
+      "fn greet(name: &str) -> String {\n  format!(\"Hello, {}!\", name)\n}"
+    ],
+    "hard": [
+      "struct Calculator;\nimpl Calculator {\n  fn add(a: i32, b: i32) -> i32 {\n    a + b\n  }\n  fn multiply(a: i32, b: i32) -> i32 {\n    a * b\n  }\n}",
+      "fn main() {\n  let numbers = vec![1, 2, 3, 4, 5];\n  let sum: i32 = numbers.iter().sum();\n  println!(\"Sum: {}\", sum);\n}",
+      "fn filter_even(nums: Vec<i32>) -> Vec<i32> {\n  nums.into_iter().filter(|x| x % 2 == 0).collect()\n}"
+    ]
+  },
+  "php": {
+    "easy": [
+      "<?php\necho \"Hello, World!\";\n?>",
+      "<?php\n$name = \"Alice\";\n$age = 30;\necho \"$name is $age years old\";\n?>",
+      "<?php\n$numbers = array(1, 2, 3, 4, 5);\nforeach ($numbers as $n) {\n  echo $n . \"\\n\";\n}\n?>"
+    ],
+    "medium": [
+      "<?php\nfunction fibonacci($n) {\n  if ($n <= 1) return $n;\n  return fibonacci($n - 1) + fibonacci($n - 2);\n}\n?>",
+      "<?php\n$numbers = array(1, 2, 3, 4, 5);\n$squares = array_map(function($x) { return $x * $x; }, $numbers);\nprint_r($squares);\n?>",
+      "<?php\nfunction greet($name) {\n  return \"Hello, $name!\";\n}\necho greet(\"PHP\");\n?>"
+    ],
+    "hard": [
+      "<?php\nclass Calculator {\n  public function add($a, $b) {\n    return $a + $b;\n  }\n  public function multiply($a, $b) {\n    return $a * $b;\n  }\n}\n?>",
+      "<?php\n$numbers = array(1, 2, 3, 4, 5);\n$evens = array_filter($numbers, function($x) { return $x % 2 == 0; });\necho array_sum($evens);\n?>",
+      "<?php\nfunction filterEven($arr) {\n  return array_filter($arr, fn($x) => $x % 2 == 0);\n}\n?>"
+    ]
+  }
   }
 }
