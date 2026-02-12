@@ -152,6 +152,37 @@ Contributions are welcome! Feel free to:
 - Optimize performance
 - Add new programming languages
 
+
+## 🚀 Deployment
+
+This project is configured for easy deployment on Netlify.
+
+### Deploy to Netlify
+
+1. Click the button below to deploy directly to Netlify:
+
+   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/shashwatpathak002-glitch/code-typing-trainer)
+
+2. Alternatively, you can deploy manually:
+   - Fork or clone this repository
+   - Create a new site on [Netlify](https://netlify.com/)
+   - Connect your GitHub repository
+   - Netlify will automatically detect the `netlify.toml` configuration
+   - The build settings are pre-configured:
+     - **Base directory**: `frontend`
+     - **Build command**: `npm run build`
+     - **Publish directory**: `dist`
+   - Click "Deploy site" and wait for the build to complete
+
+### Configuration
+
+The `netlify.toml` file in the root directory contains all necessary build configuration:
+- Frontend build from the `/frontend` directory
+- Vite build process
+- SPA redirect rules for proper routing
+- Node.js 18 environment
+
+**Note**: The backend API is not deployed with this configuration. For full-stack deployment, you'll need to deploy the FastAPI backend separately (e.g., on Render, Railway, or Heroku) and update the frontend API endpoint in `frontend/src/api.js`.
 ## 📝 License
 
 This project is open source and available under the MIT License.
